@@ -397,3 +397,13 @@ def GetGameState() -> GameState:
             return GameState.TITLE_SCREEN
         case _:
             return GameState.UNKNOWN
+
+def readuInt(addr: int):
+    return mGBA.proc.read_uint(SymbolOffset(addr))
+
+def readuShort(addr: int):
+    return mGBA.proc.read_ushort(SymbolOffset(addr))
+
+def readBytes(addr: int, size: int):
+    return mGBA.proc.read_bytes(SymbolOffset(addr),size)
+
